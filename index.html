@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/main.css">
-    </head>
-    <body>
-        <div id="app">Hello, World!</div>
-        <div id="canvas"></div>
-        <script src="/index.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Home</title>
+    <meta name="description" content />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/main.css" />
+</head>
+
+<body>
+    <div id="canvas"></div>
+    <form id="new_document_attachment" method="post" enctype="multipart/form-data">
+        <div class="actions">
+            <input type="submit" name="commit" value="Submit" />
+        </div>
+        <input type="file" name="document_attachment_doc" id="document_attachment_doc" />
+    </form>
+    <script src="/index.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,14 @@
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#canvas {
+    width: 200px;
+    height: 200px;
+    background-color: #2f2f2f;
+}
+
+form {
+    color: #2f2f2f;
+    /* display: none; */
+}
