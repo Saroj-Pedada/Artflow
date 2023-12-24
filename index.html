@@ -2,23 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Home</title>
-    <meta name="description" content />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="main.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Home</title>
+  <meta name="description" content />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
-    <div id="canvas"></div>
-    <form id="new_document_attachment" method="post" enctype="multipart/form-data">
-        <div class="actions">
-            <input type="submit" name="commit" value="Submit" />
-        </div>
-        <input type="file" name="document_attachment_doc" id="document_attachment_doc" />
-    </form>
-    <script src="index.js"></script>
+  <input type="file" title=" " name="filename" id="file" onchange="myFunction()" />
+  <script src="index.js"></script>
 </body>
 
 </html>

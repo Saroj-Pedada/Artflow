@@ -2,13 +2,39 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#canvas {
-    width: 200px;
-    height: 200px;
-    background-color: #2f2f2f;
+input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #2f2f2f;
+    opacity: 0;
 }
 
-form {
-    color: #2f2f2f;
-    /* display: none; */
+.item {
+    position: absolute;
+    width: 200px;
+    resize: both;
+}
+
+img {
+    border-radius: 20px;
+    width: 100px;
+    height: auto;
+    border: #3b5fff00 4px solid;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+}
+
+.item img:hover {
+    cursor: pointer;
+    border: #3b5fff 4px solid;
+    box-shadow: #3b5fff 0px 0px 10px;
+}
+
+.ui-icon {
+    opacity: 0;
 }

@@ -1,13 +1,46 @@
-const form = document.getElementById("new_document_attachment");
-const fileInput = document.getElementById("document_attachment_doc");
+var id = document.getElementsByTagName("img").length;
+var zoom = 1;
+const ZOOM_SPEED = 0.05;
 
-fileInput.addEventListener("change", () => {
-  form.submit();
-});
+function myFunction() {
+    let file = document.getElementById("file").files[0];
+    f(file);
+}
 
 window.addEventListener("paste", (e) => {
-  fileInput.files = e.clipboardData.files;
+    let file = e.clipboardData.files[0];
+    f(file)
 });
 
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+document.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) {
+        zoom -= ZOOM_SPEED;
+        document.body.style.transform = `scale(${(zoom)})`;
+    } else {
+        zoom += ZOOM_SPEED;
+        document.body.style.transform = `scale(${(zoom)})`;
+    }
+});
+
+function dragAndResize() {
+    $(".item").draggable();
+    $(".item").resizable();
+};
+
+function f(file) {
+    id = id + 1;
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var imageBox = document.createElement("div");
+        imageBox.classList.add("item");
+        imageBox.id = String(id);
+        var image = document.createElement("img");
+        image.src = e.target.result;
+        image.id = String(id);
+        imageBox.appendChild(image);
+        document.body.appendChild(imageBox);
+        dragAndResize();
+    };
+    reader.readAsDataURL(file);
+    console.log(id);
+}
