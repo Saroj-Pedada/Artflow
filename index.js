@@ -3,22 +3,26 @@ var zoom = 1;
 const ZOOM_SPEED = 0.05;
 
 function myFunction() {
-    let file = document.getElementById("file").files[0];
-    f(file);
+    f(document.getElementById("file").files[0]);
 }
 
 window.addEventListener("paste", (e) => {
-    let file = e.clipboardData.files[0];
-    f(file)
+    f(e.clipboardData.files[0]);
 });
 
 document.addEventListener("wheel", function (e) {
     if (e.deltaY > 0) {
         zoom -= ZOOM_SPEED;
-        document.body.style.transform = `scale(${(zoom)})`;
+        let images = document.getElementsByTagName("img");
+        for (var image of images) {
+            image.style.transform = `scale(${(zoom)},${(zoom)})`;
+        }
     } else {
         zoom += ZOOM_SPEED;
-        document.body.style.transform = `scale(${(zoom)})`;
+        let images = document.getElementsByTagName("img")
+        for (var image of images) {
+            image.style.transform = `scale(${(zoom)},${(zoom)})`;
+        }
     }
 });
 
