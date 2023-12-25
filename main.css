@@ -12,12 +12,9 @@ input {
 }
 
 .item {
+    border-radius: 20px;
     position: absolute;
-    width: 200px;
-}
-
-div {
-    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 300px;
 }
 
 img {
