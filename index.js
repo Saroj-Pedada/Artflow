@@ -8,9 +8,7 @@ window.addEventListener("paste", (e) => {
 
 function dblclicker(id) {
     let z = Number(document.getElementById(id).style.zIndex);
-    console.log(Number(z))
     document.getElementById(id).style.zIndex = z + 1;
-    console.log(id + "-" + z);
 }
 
 function myFunction() {
@@ -30,7 +28,6 @@ function f(file) {
         var imageBox = document.createElement("div");
         imageBox.classList.add("item");
         imageBox.id = String(id);
-        imageBox.addEventListener("wheel", (k) => s(k, imageBox));
         imageBox.addEventListener("dblclick", () => dblclicker(temp));
         var image = document.createElement("img");
         image.src = e.target.result;
@@ -40,14 +37,4 @@ function f(file) {
     };
     reader.readAsDataURL(file);
     console.log(id);
-}
-
-function s(e, div) {
-    if (e.deltaY > 0 && zoom >= 0.6) {
-        zoom -= ZOOM_SPEED;
-        div.style.transform = `scale(${zoom},${zoom})`;
-    } else if (e.deltaY < 0 && zoom <= 1.4) {
-        zoom += ZOOM_SPEED;
-        div.style.transform = `scale(${zoom},${zoom})`;
-    }
 }
