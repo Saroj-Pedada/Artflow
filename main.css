@@ -22,7 +22,20 @@ img {
     width: 100px;
     height: auto;
     border: #3b5fff00 4px solid;
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cross {
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    background-color: transparent;
+}
+
+.cross:hover {
+    color: red;
+    transition: 0.2s ease-in-out;
 }
 
 .item img {
@@ -33,12 +46,18 @@ img {
 }
 
 .item img:hover {
-    cursor: pointer;
+    cursor: grab;
     border: #3b5fff 4px solid;
     box-shadow: #3b5fff 0px 0px 10px;
 }
 
-.ui-icon, .ui-resizable-s, .ui-resizable-e{
+.item img:active {
+    cursor: grabbing;
+}
+
+.ui-icon,
+.ui-resizable-s,
+.ui-resizable-e {
     opacity: 0;
 }
 

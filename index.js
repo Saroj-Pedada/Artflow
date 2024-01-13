@@ -25,12 +25,19 @@ function f(file) {
     var reader = new FileReader();
     reader.onload = function (e) {
         let temp = id;
+        var cross = document.createElement("div");
         var imageBox = document.createElement("div");
         imageBox.classList.add("item");
         imageBox.id = String(id);
         imageBox.addEventListener("dblclick", () => dblclicker(temp));
         var image = document.createElement("img");
         image.src = e.target.result;
+        cross.innerHTML = "&times;";
+        cross.classList.add("cross");
+        cross.addEventListener("click", () => {
+            document.body.removeChild(imageBox);
+        });
+        imageBox.appendChild(cross);
         imageBox.appendChild(image);
         document.body.appendChild(imageBox);
         dragAndResize();
