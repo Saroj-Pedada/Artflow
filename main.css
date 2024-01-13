@@ -1,12 +1,22 @@
-* {
+html {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #f2f2f2;
+    background-color: white;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+h1 {
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+h1:hover {
+    cursor: pointer;
 }
 
 input {
     position: absolute;
-    width: 98%;
-    height: 98%;
+    width: 99%;
+    height: 89%;
     color: #2f2f2f;
     opacity: 0;
 }
@@ -26,6 +36,8 @@ img {
 }
 
 .cross {
+    border-radius: 20%;
+    padding: 2px;
     cursor: pointer;
     position: absolute;
     top: 3%;
@@ -45,10 +57,16 @@ img {
     box-shadow: #3b5fff00 0px 0px 10px;
 }
 
-.item img:hover {
+.light-mode img:hover {
     cursor: grab;
     border: #3b5fff 4px solid;
     box-shadow: #3b5fff 0px 0px 10px;
+}
+
+.dark-mode img:hover {
+    cursor: grab;
+    border: #f2f2f2 4px solid;
+    box-shadow: #f2f2f2 0px 0px 10px;
 }
 
 .item img:active {
@@ -59,8 +77,4 @@ img {
 .ui-resizable-s,
 .ui-resizable-e {
     opacity: 0;
-}
-
-h1 {
-    padding: 10px;
 }
