@@ -28,6 +28,8 @@ img {
 .item img {
     width: 100%;
     height: 100%;
+    border: #3b5fff00 4px solid;
+    box-shadow: #3b5fff00 0px 0px 10px;
 }
 
 .item img:hover {
