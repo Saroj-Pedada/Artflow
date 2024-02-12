@@ -1,61 +1,20 @@
-var mode = "light-mode";
+const express = require("express")
+const app = express()
 
-window.addEventListener("paste", (e) => {
-    f(e.clipboardData.files[0]);
-});
+app.use(express.static(__dirname + '/public'));
 
-function myFunction() {
-    f(document.getElementById("file").files[0]);
-}
+app.get("/", (_, res) => {
+    res.sendFile(__dirname + "/pages/index.html")
+})
 
-function dragAndResize() {
-    $(".item").draggable();
-    $(".item").resizable();
-}
+app.get("/info", (_, res) => {
+    res.sendFile(__dirname + "/pages/info.html")
+})
 
-function f(file) {
-    let reader = new FileReader();
-    reader.onload = function (e) {
-        var cross = document.createElement("div");
-        cross.innerHTML = "&times;";
-        cross.classList.add("cross");
-        cross.addEventListener("click", () => {
-            document.body.removeChild(imageBox);
-        });
-        var image = document.createElement("img");
-        image.src = e.target.result;
-        var imageBox = document.createElement("div");
-        imageBox.classList.add("item");
-        imageBox.classList.add(mode);
-        imageBox.addEventListener("dblclick", () => {
-            imageBox.style.zIndex = Number(imageBox.style.zIndex) + 1;
-        });
-        imageBox.appendChild(cross);
-        imageBox.appendChild(image);
-        document.body.appendChild(imageBox);
-        dragAndResize();
-    };
-    reader.readAsDataURL(file);
-}
+app.use((_, res, __) => {
+    res.sendFile(__dirname + "/pages/error.html")
+})
 
-function toggle() {
-    if (mode == "light-mode") {
-        document.documentElement.style.backgroundColor = "#2f2f2f";
-        document.documentElement.style.color = "white";
-        let elements = $(".light-mode");
-        for (let e of elements) {
-            e.classList.remove("light-mode");
-            e.classList.add("dark-mode");
-        }
-        mode = "dark-mode";
-    } else {
-        document.documentElement.style.backgroundColor = "white";
-        document.documentElement.style.color = "#2f2f2f";
-        let elements = $(".dark-mode");
-        for (let e of elements) {
-            e.classList.remove("dark-mode");
-            e.classList.add("light-mode");
-        }
-        mode = "light-mode";
-    }
-}
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server is running on port 3000...")
+})

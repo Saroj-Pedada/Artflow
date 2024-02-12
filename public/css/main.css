@@ -1,0 +1,164 @@
+html {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.save,
+.load {
+    z-index: 999;
+    position: absolute;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.save {
+    left: 5%;
+}
+
+.load {
+    right: 5%;
+}
+
+#headbar {
+    position: relative;
+    width: 100%;
+}
+
+#loadfile {
+    display: none;
+}
+
+#container {
+    position: absolute
+}
+
+h1 {
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+input {
+    position: absolute;
+    width: 99%;
+    height: 89%;
+    color: #2f2f2f;
+    opacity: 0;
+}
+
+img {
+    border-radius: 20px;
+    width: 100px;
+    height: auto;
+    border: #3b5fff00 2px solid;
+    transition: 0.5s ease-in-out;
+}
+
+
+.info {
+    position: absolute;
+    right: 5%;
+    top: 6%;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.info:hover {
+    color: #3b5fff;
+}
+
+.item {
+    border-radius: 20px;
+    position: absolute;
+    width: 300px;
+    z-index: 0;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border: #3b5fff00 2px solid;
+    box-shadow: #3b5fff00 0px 0px 10px;
+}
+
+.item:hover img:active {
+    cursor: grabbing;
+}
+
+.cross {
+    z-index: 99;
+    border-radius: 20%;
+    padding: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    background-color: transparent;
+}
+
+.info-cross {
+    z-index: 99;
+    border-radius: 20%;
+    padding: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    background-color: transparent;
+}
+
+.cross:hover {
+    color: red;
+    transition: 0.5s ease-in-out;
+}
+
+.light-mode img:hover {
+    cursor: grab;
+    border: #3b5fff 2px solid;
+    box-shadow: #3b5fff 0px 0px 10px;
+}
+
+.dark-mode img:hover {
+    cursor: grab;
+    border: #f2f2f2 2px solid;
+    box-shadow: #f2f2f2 0px 0px 10px;
+}
+
+.ui-icon,
+.ui-resizable-s,
+.ui-resizable-e {
+    opacity: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff0000;
+}
+
+.infoFrame {
+    z-index: 91;
+    background-color: #3b5fff00;
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.infoBox {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 91;
+    background-color: #3b5fff00;
+    position: absolute;
+    width: 800px;
+    height: 600px;
+}
